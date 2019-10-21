@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  anodot-prometheus-remote-write:
+  - apiVersion: v1
+    appVersion: 1.2.1
+    created: "2019-10-21T14:47:27.749245+03:00"
+    description: Anodot Prometheus remote write. Used to push Prometheus to Anodot
+      system.
+    digest: 725b01f44d1e11351554d2acae6e9b9f985f495ea0512406c066923e6cedf612
+    name: anodot-prometheus-remote-write
+    urls:
+    - https://anodot.github.io/helm-charts/anodot-prometheus-remote-write-1.0.0.tgz
+    version: 1.0.0
+generated: "2019-10-21T14:47:27.747242+03:00"
