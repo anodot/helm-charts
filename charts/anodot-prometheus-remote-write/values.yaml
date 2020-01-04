@@ -1,0 +1,60 @@
+image:
+  repository: anodot/prometheus-remote-write
+  tag: "2.0.0"
+  pullPolicy: IfNotPresent
+
+configuration:
+  replicas: 1
+  env:
+    ANODOT_LOG_LEVEL: "info"
+    ANODOT_TAGS: "source=prometheus-remote-write"
+    ANODOT_HTTP_DEBUG_ENABLED: "false"
+  args:
+    - "--url=http://anodotd:8080/api/v1/"
+    - "--token=XXXXXXXXX"
+
+resources:
+  requests:
+    memory: '200M'
+    cpu: '300m'
+  limits:
+    memory: '1Gi'
+    cpu: '500m'
+
+livenessProbe:
+  initialDelaySeconds: 30
+  timeoutSeconds: 2
+  periodSeconds: 30
+readinessProbe:
+  initialDelaySeconds: 30
+  timeoutSeconds: 2
+  periodSeconds: 30
+
+service:
+  type: ClusterIP
+
+prometheus:
+  serviceMonitor:
+    enabled: false
+    jobLabel: "anodot-prometheus-remote-write"
+    #labels:
+    #  key: "value"
+
+    interval: 30s
+    scrapeTimeout: 5s
+
+    metricRelabelings: []
+    #  - sourceLabels: [__name__]
+    #    regex: '(.*)'
+    #    targetLabel: anodot_include
+    #    replacement: 'true'
+    #  - sourceLabels: [__name__]
+    #    regex: '(.*)'
+    #    action: 'keep'
+    relabelings: []
+    # - sourceLabels: [__meta_kubernetes_pod_node_name]
+    #   separator: ;
+    #   regex: ^(.*)$
+    #   target_label: nodename
+    #   replacement: $1
+    #   action: replace
