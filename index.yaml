@@ -3,17 +3,17 @@ entries:
   anodot-prometheus-remote-write:
   - apiVersion: v1
     appVersion: 2.0.0
-    created: "2020-01-03T17:44:59.455376+02:00"
+    created: "2020-01-04T12:31:56.480124+02:00"
     description: Anodot Prometheus remote write. Used to push Prometheus to Anodot
       system.
-    digest: 5a7c82ae3399f9182594567c97252e41ee0aa4eebc40ae10ea1d1c4032e3d9d7
+    digest: 2e117b3adc18d3eaa1625e1a440a50f6f7140e96174b0032476a73ee8fb70b01
     name: anodot-prometheus-remote-write
     urls:
     - https://anodot.github.io/helm-charts/anodot-prometheus-remote-write-1.1.1.tgz
     version: 1.1.1
   - apiVersion: v1
     appVersion: 1.4.1
-    created: "2020-01-03T17:44:59.454931+02:00"
+    created: "2020-01-04T12:31:56.477868+02:00"
     description: Anodot Prometheus remote write. Used to push Prometheus to Anodot
       system.
     digest: 2f50afadd3422bf3287516dc2b15e56546ffee5dd1eff6dbf8f05021a7482636
@@ -23,7 +23,7 @@ entries:
     version: 1.1.0
   - apiVersion: v1
     appVersion: 1.2.1
-    created: "2020-01-03T17:44:59.454485+02:00"
+    created: "2020-01-04T12:31:56.476785+02:00"
     description: Anodot Prometheus remote write. Used to push Prometheus to Anodot
       system.
     digest: 725b01f44d1e11351554d2acae6e9b9f985f495ea0512406c066923e6cedf612
@@ -31,4 +31,4 @@ entries:
     urls:
     - https://anodot.github.io/helm-charts/anodot-prometheus-remote-write-1.0.0.tgz
     version: 1.0.0
-generated: "2020-01-03T17:44:59.452764+02:00"
+generated: "2020-01-04T12:31:56.475481+02:00"
