@@ -4,6 +4,13 @@ image:
   pullPolicy: IfNotPresent
 
 configuration:
+  resources:
+    requests:
+      memory: '200M'
+      cpu: '300m'
+    limits:
+      memory: '1Gi'
+      cpu: '500m'
   replicas: 1
   env:
     ANODOT_LOG_LEVEL: "info"
@@ -14,13 +21,6 @@ configuration:
     - "--url=http://anodotd:8080"
     - "--token=XXXXXXXXX"
 
-resources:
-  requests:
-    memory: '200M'
-    cpu: '300m'
-  limits:
-    memory: '1Gi'
-    cpu: '500m'
 
 livenessProbe:
   initialDelaySeconds: 30
