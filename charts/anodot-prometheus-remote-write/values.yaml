@@ -9,6 +9,7 @@ configuration:
     ANODOT_LOG_LEVEL: "info"
     ANODOT_TAGS: "source=prometheus-remote-write"
     ANODOT_HTTP_DEBUG_ENABLED: "false"
+    #K8S_RELABEL_SERVICE_URL: "http://anodot-pod-relabel:8080"
   args:
     - "--url=http://anodotd:8080"
     - "--token=XXXXXXXXX"
