@@ -1,0 +1,34 @@
+{{ if .Values.rbac.enabled }}
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRole
+metadata:
+  name: anodot-pod-relabel
+rules:
+  - apiGroups: ["*"]
+    resources:
+      - pods
+      - replicasets
+      - deployments
+      - daemonsets
+      - endpoints
+    verbs: ["get", "list", "watch", "patch"]
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: anodot-pod-relabel
+  namespace: {{.Release.Namespace}}
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: anodot-pod-relabel
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: anodot-pod-relabel
+subjects:
+  - kind: ServiceAccount
+    name: anodot-pod-relabel
+    namespace: {{.Release.Namespace}}
+{{- end }}

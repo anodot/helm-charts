@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "template_name" . }}
+  labels:
+    app: {{ template "template_name" . }}
+    chart: {{ template "chart_name" . }}
+    release: {{ .Release.Name }}
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: {{ template "template_name" . }}
+      release: {{ .Release.Name }}
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ template "template_name" . }}
+        release: {{ .Release.Name }}
+    spec:
+{{ if .Values.rbac.enabled }}
+      serviceAccountName: anodot-pod-relabel
+{{- end }}
+      containers:
+        - name: {{ template "template_name" . }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          resources:
+{{ toYaml .Values.configuration.resources | indent 12 -}}
+          env:
+            {{- range $name, $value := .Values.configuration.env }}
+            - name: "{{ $name }}"
+              value: "{{ $value }}"
+{{- end }}

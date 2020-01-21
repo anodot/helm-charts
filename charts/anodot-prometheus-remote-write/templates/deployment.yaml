@@ -40,7 +40,7 @@ spec:
             - {{ . }}
             {{ end }}
           resources:
-  {{ toYaml .Values.configuration.resources | indent 12 }}
+{{ toYaml .Values.configuration.resources | indent 12 }}
           livenessProbe:
             httpGet:
               path: /health

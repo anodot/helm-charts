@@ -10,7 +10,7 @@ configuration:
     ANODOT_TAGS: "source=prometheus-remote-write"
     ANODOT_HTTP_DEBUG_ENABLED: "false"
   args:
-    - "--url=http://anodotd:8080/api/v1/"
+    - "--url=http://anodotd:8080"
     - "--token=XXXXXXXXX"
 
 resources:

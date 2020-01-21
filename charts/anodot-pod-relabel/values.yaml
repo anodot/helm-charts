@@ -1,0 +1,21 @@
+image:
+  repository: kiamran/pod-relabel-app
+  tag: "latest"
+  pullPolicy: Always
+
+configuration:
+  replicas: 1
+  env:
+    EXCLUDE_NAMESPACE: ""
+    INCLUDE_LABELS: ""
+    LOG_LEVEL: "5"
+  resources:
+    requests:
+      memory: '20M'
+      cpu: '50m'
+    limits:
+      memory: '100M'
+      cpu: '200m'
+
+rbac:
+  enabled: true
