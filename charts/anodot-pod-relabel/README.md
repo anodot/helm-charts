@@ -30,16 +30,23 @@ Labels:         anodot.com/podName=cloudwatch-exporter-1
 helm repo add anodot https://anodot.github.io/helm-charts
 ```
 
+## Simple setup
+```shell script
+helm upgrade -i anodot-pod-relabel --namespace=monitoring anodot/anodot-pod-relabel
+```
+
+## Advanced setup
 ```shell script
 helm fetch anodot/anodot-pod-relabel --untar
+
 ```
 
 Navigate to `anodot-pod-relabel` folder and edit `values.yaml` with required values.
-
 Run next command to install chart
 ```shell script
 helm upgrade -i anodot-pod-relabel . --namespace=monitoring
 ```
 
-set K8S_RELABEL_SERVICE_URL under Values.configuration.env in anodot-remote-write values.yaml re deploy the remote-write
+## Next
+set `K8S_RELABEL_SERVICE_URL` under Values.configuration.env in anodot-remote-write values.yaml re deploy the remote-write
 
