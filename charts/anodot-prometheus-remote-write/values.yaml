@@ -18,7 +18,7 @@ configuration:
     ANODOT_HTTP_DEBUG_ENABLED: "false"
     #K8S_RELABEL_SERVICE_URL: "http://anodot-pod-relabel:8080"
   args:
-    - "--url=http://anodotd:8080"
+    - "--url=***REMOVED***"
     - "--token=XXXXXXXXX"
 
 
