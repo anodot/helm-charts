@@ -3,6 +3,15 @@ entries:
   anodot-pod-relabel:
   - apiVersion: v1
     appVersion: 0.0.1
+    created: 2020-01-22T21:29:59.34300493+02:00
+    description: Anodot pod relabel app. used to assing pods with sequence labels
+    digest: 5ebd97e9aa086f674bc1ea4dd65c5ee818cfcb2c0b8c7a92009d73ce7436007c
+    name: anodot-pod-relabel
+    urls:
+    - https://anodot.github.io/helm-charts/anodot-pod-relabel-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v1
+    appVersion: 0.0.1
     created: 2020-01-22T21:28:39.13476534+02:00
     description: Anodot pod relabel app. used to assing pods with sequence labels
     digest: e8829d1eaff40bbfb1151cd9a5f45cad8dec3004a2ce078319dc24ff7ed5b1ae
@@ -13,17 +22,17 @@ entries:
   anodot-prometheus-remote-write:
   - apiVersion: v1
     appVersion: 2.0.0
-    created: 2020-01-22T21:28:39.135861839+02:00
+    created: 2020-01-22T21:29:59.343850734+02:00
     description: Anodot Prometheus remote write. Used to push Prometheus to Anodot
       system.
-    digest: fcfa0d0cedd93305e4cc6563cd25b528544f996c814ffc42893dc26ddec44521
+    digest: e4c55e62e2f6fa182ffb699c1a04601b01f8f0c04d18381dabcb22b8fe1bf7ff
     name: anodot-prometheus-remote-write
     urls:
     - https://anodot.github.io/helm-charts/anodot-prometheus-remote-write-1.1.2.tgz
     version: 1.1.2
   - apiVersion: v1
     appVersion: 2.0.0
-    created: 2020-01-22T21:28:39.135617689+02:00
+    created: 2020-01-22T21:29:59.343603753+02:00
     description: Anodot Prometheus remote write. Used to push Prometheus to Anodot
       system.
     digest: 8d75be1e37bd5d385aab854392627ca883b3bf3f41557c7e1192935b8f6d295e
@@ -31,4 +40,4 @@ entries:
     urls:
     - https://anodot.github.io/helm-charts/anodot-prometheus-remote-write-1.1.1.tgz
     version: 1.1.1
-generated: 2020-01-22T21:28:39.134085394+02:00
+generated: 2020-01-22T21:29:59.342172731+02:00
