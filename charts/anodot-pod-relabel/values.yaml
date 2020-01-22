@@ -1,6 +1,6 @@
 image:
-  repository: kiamran/pod-relabel-app
-  tag: "latest"
+  repository: anodot/pod-relabel-app
+  tag: "0.0.1"
   pullPolicy: Always
 
 configuration:

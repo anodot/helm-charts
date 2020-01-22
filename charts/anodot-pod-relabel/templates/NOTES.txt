@@ -2,4 +2,4 @@ The Anodot Pod Relabel application has been installed. Check its status by runni
   kubectl --namespace {{ .Release.Namespace }} get pods -l "release={{ .Release.Name }}"
 
 
-K8S_RELABEL_SERVICE_URL="http://{{ template "template_name" . }}:8080"
+K8S_RELABEL_SERVICE_URL="http://{{ template "template_name" . }}.{{ .Release.Namespace }}:8080"

@@ -6,14 +6,14 @@ image:
 configuration:
   resources:
     requests:
-      memory: '200M'
-      cpu: '300m'
+      memory: '4Gi'
+      cpu: '2'
     limits:
-      memory: '1Gi'
-      cpu: '500m'
+      memory: '5Gi'
+      cpu: '3'
   replicas: 1
   env:
-    ANODOT_LOG_LEVEL: "info"
+    ANODOT_LOG_LEVEL: "3"
     ANODOT_TAGS: "source=prometheus-remote-write"
     ANODOT_HTTP_DEBUG_ENABLED: "false"
     #K8S_RELABEL_SERVICE_URL: "http://anodot-pod-relabel:8080"
