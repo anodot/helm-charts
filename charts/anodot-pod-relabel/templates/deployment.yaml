@@ -30,10 +30,10 @@ spec:
         - name: {{ template "template_name" . }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          {{- range $name, $value := .Values.configuration.env }}
+          - name: "{{ $name }}"
+            value: "{{ $value }}"
+{{- end }}
           resources:
 {{ toYaml .Values.configuration.resources | indent 12 -}}
-          env:
-            {{- range $name, $value := .Values.configuration.env }}
-            - name: "{{ $name }}"
-              value: "{{ $value }}"
-{{- end }}
