@@ -50,3 +50,15 @@ helm upgrade -i anodot-pod-relabel . --namespace=monitoring
 ## Next
 set `K8S_RELABEL_SERVICE_URL` under Values.configuration.env in anodot-remote-write values.yaml re deploy the remote-write
 
+## RBAC
+`anodot-pod-relabel` application requires access to next resources to assign ordinal labels. RBAC configuration applied by default.
+To tun off RBAC configuration, use `--set rbac.enabled=false`
+
+```yaml
+    resources:
+      - pods
+      - replicasets
+      - deployments
+      - daemonsets
+    verbs: ["get", "list", "watch", "patch"]
+```

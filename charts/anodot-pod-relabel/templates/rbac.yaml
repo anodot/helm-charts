@@ -10,7 +10,6 @@ rules:
       - replicasets
       - deployments
       - daemonsets
-      - endpoints
     verbs: ["get", "list", "watch", "patch"]
 ---
 apiVersion: v1
