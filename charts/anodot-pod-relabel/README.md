@@ -1,4 +1,4 @@
-# Anodot pod relabel
+# Anodot Pod Relabel
 
 This application is used to assign pods which are managed by deployments/replicasets/daemonsets 
 with unique sequenced labels (`anodot.com/podName=${deployment-name}-${ordinal}`), where ordinal is generated based on total number of pods managed by given object.
