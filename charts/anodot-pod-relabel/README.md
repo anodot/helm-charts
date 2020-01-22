@@ -40,3 +40,6 @@ Run next command to install chart
 ```shell script
 helm upgrade -i anodot-pod-relabel . --namespace=monitoring
 ```
+
+set K8S_RELABEL_SERVICE_URL under Values.configuration.env in anodot-remote-write values.yaml re deploy the remote-write
+
