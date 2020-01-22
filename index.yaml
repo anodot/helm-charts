@@ -10,15 +10,6 @@ entries:
     urls:
     - https://anodot.github.io/helm-charts/anodot-pod-relabel-0.0.2.tgz
     version: 0.0.2
-  - apiVersion: v1
-    appVersion: 0.0.1
-    created: 2020-01-22T21:28:39.13476534+02:00
-    description: Anodot pod relabel app. used to assing pods with sequence labels
-    digest: e8829d1eaff40bbfb1151cd9a5f45cad8dec3004a2ce078319dc24ff7ed5b1ae
-    name: anodot-pod-relabel
-    urls:
-    - https://anodot.github.io/helm-charts/anodot-pod-relabel-0.0.1.tgz
-    version: 0.0.1
   anodot-prometheus-remote-write:
   - apiVersion: v1
     appVersion: 2.0.0
