@@ -1,11 +1,22 @@
 apiVersion: v1
 entries:
+  anodot-kube-events:
+  - apiVersion: v1
+    appVersion: 0.0.1
+    created: 2020-04-06T19:48:20.123048283+03:00
+    description: Anodot kube events app. used to send Kubernetes events to Anodot
+      system
+    digest: ce03ca3483ad11219d102ca335651a18602c611d988e9e9a4266a6bc25a2be7f
+    name: anodot-kube-events
+    urls:
+    - https://anodot.github.io/helm-charts/anodot-kube-events-0.0.1.tgz
+    version: 0.0.1
   anodot-pod-relabel:
   - apiVersion: v1
     appVersion: 0.0.2
-    created: 2020-01-22T21:55:45.719153937+02:00
+    created: 2020-04-06T19:48:20.123336913+03:00
     description: Anodot pod relabel app. used to assing pods with sequence labels
-    digest: c431a8dba468111861c61c5ff0ed252dcd1d15dc9222c3ff13b414c1fada32d0
+    digest: bee590a7f6f94dc46f215ffc9d22a8a7012b209a4dcd636995f88a8cdefdb321
     name: anodot-pod-relabel
     urls:
     - https://anodot.github.io/helm-charts/anodot-pod-relabel-0.0.2.tgz
@@ -13,17 +24,17 @@ entries:
   anodot-prometheus-remote-write:
   - apiVersion: v1
     appVersion: 2.0.0
-    created: 2020-01-22T21:55:45.720235018+02:00
+    created: 2020-04-06T19:48:20.124472738+03:00
     description: Anodot Prometheus remote write. Used to push Prometheus to Anodot
       system.
-    digest: 699deb5f0aaafa73d0e7c2ea0daa9092975bbb9f720b41ee14a556c84c69ae9b
+    digest: 5b309327c19ea904487a60ee63e315743da5a4a69be1b8d3b27da05a6f20456f
     name: anodot-prometheus-remote-write
     urls:
     - https://anodot.github.io/helm-charts/anodot-prometheus-remote-write-1.1.2.tgz
     version: 1.1.2
   - apiVersion: v1
     appVersion: 2.0.0
-    created: 2020-01-22T21:55:45.719998794+02:00
+    created: 2020-04-06T19:48:20.124149434+03:00
     description: Anodot Prometheus remote write. Used to push Prometheus to Anodot
       system.
     digest: 8d75be1e37bd5d385aab854392627ca883b3bf3f41557c7e1192935b8f6d295e
@@ -31,4 +42,4 @@ entries:
     urls:
     - https://anodot.github.io/helm-charts/anodot-prometheus-remote-write-1.1.1.tgz
     version: 1.1.1
-generated: 2020-01-22T21:55:45.718201918+02:00
+generated: 2020-04-06T19:48:20.121932033+03:00
