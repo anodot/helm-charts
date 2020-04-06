@@ -3,10 +3,10 @@ entries:
   anodot-kube-events:
   - apiVersion: v1
     appVersion: 0.0.1
-    created: 2020-04-06T19:48:20.123048283+03:00
+    created: 2020-04-06T19:54:34.557463033+03:00
     description: Anodot kube events app. used to send Kubernetes events to Anodot
       system
-    digest: ce03ca3483ad11219d102ca335651a18602c611d988e9e9a4266a6bc25a2be7f
+    digest: bf231f9ef6c0e1812e44f72a40c1638f02a4dab1708b6f7df11a3dcfa8d7cd24
     name: anodot-kube-events
     urls:
     - https://anodot.github.io/helm-charts/anodot-kube-events-0.0.1.tgz
@@ -14,9 +14,9 @@ entries:
   anodot-pod-relabel:
   - apiVersion: v1
     appVersion: 0.0.2
-    created: 2020-04-06T19:48:20.123336913+03:00
+    created: 2020-04-06T19:54:34.557760997+03:00
     description: Anodot pod relabel app. used to assing pods with sequence labels
-    digest: bee590a7f6f94dc46f215ffc9d22a8a7012b209a4dcd636995f88a8cdefdb321
+    digest: 6150cd1a4158a8dca55159a8fdd50e7a36d49e9cdd8363161c8365e07f13a913
     name: anodot-pod-relabel
     urls:
     - https://anodot.github.io/helm-charts/anodot-pod-relabel-0.0.2.tgz
@@ -24,17 +24,17 @@ entries:
   anodot-prometheus-remote-write:
   - apiVersion: v1
     appVersion: 2.0.0
-    created: 2020-04-06T19:48:20.124472738+03:00
+    created: 2020-04-06T19:54:34.558845609+03:00
     description: Anodot Prometheus remote write. Used to push Prometheus to Anodot
       system.
-    digest: 5b309327c19ea904487a60ee63e315743da5a4a69be1b8d3b27da05a6f20456f
+    digest: 34591b555a8a0c77f7962c0830f938a7c15508eae648b7975f0562cd7d6f8f40
     name: anodot-prometheus-remote-write
     urls:
     - https://anodot.github.io/helm-charts/anodot-prometheus-remote-write-1.1.2.tgz
     version: 1.1.2
   - apiVersion: v1
     appVersion: 2.0.0
-    created: 2020-04-06T19:48:20.124149434+03:00
+    created: 2020-04-06T19:54:34.558572376+03:00
     description: Anodot Prometheus remote write. Used to push Prometheus to Anodot
       system.
     digest: 8d75be1e37bd5d385aab854392627ca883b3bf3f41557c7e1192935b8f6d295e
@@ -42,4 +42,4 @@ entries:
     urls:
     - https://anodot.github.io/helm-charts/anodot-prometheus-remote-write-1.1.1.tgz
     version: 1.1.1
-generated: 2020-04-06T19:48:20.121932033+03:00
+generated: 2020-04-06T19:54:34.556630634+03:00
