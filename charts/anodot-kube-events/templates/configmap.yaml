@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "template_name" . }}
+  labels:
+    app: {{ template "template_name" . }}
+    release: {{ .Release.Name }}
+data:
+  config.yaml: |-
+    # User-supplied configuration:
+{{ toYaml .Values.configuration.events  | indent 4 }}

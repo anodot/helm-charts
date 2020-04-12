@@ -1,0 +1,90 @@
+image:
+  repository: anodot/anodot-kube-events
+  tag: "0.0.4"
+  pullPolicy: Always
+
+configuration:
+  replicas: 1
+  resources:
+    requests:
+      memory: '20M'
+      cpu: '50m'
+    limits:
+      memory: '100M'
+      cpu: '200m'
+  env:
+    ANODOT_API_TOKEN: "***REMOVED***"
+    ANODOT_URL: "***REMOVED***"
+    ANODOT_EVENT_CATEGORY: "deployments"
+    ANODOT_EVENT_SOURCE: "kubernetes"
+    ANODOT_EVENTS_PROPS_STACK: "monitoring"
+    ANODOT_LOG_LEVEL: "5"
+    ANODOT_HTTP_DEBUG_ENABLED: "true"
+  events:
+    deployment:
+      enabled: true
+    replicationcontroller:
+      enabled: false
+    replicaset:
+      enabled: false
+    daemonset:
+      enabled: true
+    services:
+      enabled: false
+    pod:
+      enabled: false
+    job:
+      enabled: true
+    persistentvolume:
+      enabled: false
+    namespace:
+      enabled: false
+    secret:
+      enabled: false
+    configmap:
+      enabled: true
+      exclude:
+        labels:
+          OWNER: "TILLER"
+        annotations:
+          "control-plane.alpha.kubernetes.io/leader": ".*"
+    ingress:
+      enabled: false
+
+livenessProbe:
+  initialDelaySeconds: 10
+  timeoutSeconds: 2
+  periodSeconds: 30
+readinessProbe:
+  initialDelaySeconds: 10
+  timeoutSeconds: 2
+  periodSeconds: 30
+
+rbac:
+  enabled: true
+
+prometheus:
+  serviceMonitor:
+    enabled: false
+    jobLabel: "anodot-kube-events"
+    #labels:
+    #  key: "value"
+
+    interval: 30s
+    scrapeTimeout: 5s
+
+    metricRelabelings: []
+    #  - sourceLabels: [__name__]
+    #    regex: '(.*)'
+    #    targetLabel: anodot_include
+    #    replacement: 'true'
+    #  - sourceLabels: [__name__]
+    #    regex: '(.*)'
+    #    action: 'keep'
+    relabelings: []
+    # - sourceLabels: [__meta_kubernetes_pod_node_name]
+    #   separator: ;
+    #   regex: ^(.*)$
+    #   target_label: nodename
+    #   replacement: $1
+    #   action: replace
