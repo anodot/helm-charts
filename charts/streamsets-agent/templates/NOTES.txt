@@ -1,0 +1,7 @@
+Agent successfully deployed.
+
+Start configuring pipelines by running commands:
+kubectl exec -it {{ include "agent.fullname" . }}-0 -c agent bash --namespace {{ .Release.Namespace }}
+
+Pipeline configuration docs and examples available at:
+https://github.com/anodot/daria/wiki
