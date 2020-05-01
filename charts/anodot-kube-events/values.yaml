@@ -13,11 +13,10 @@ configuration:
       memory: '100M'
       cpu: '200m'
   env:
-    ANODOT_API_TOKEN: "***REMOVED***"
-    ANODOT_URL: "***REMOVED***"
+    ANODOT_API_TOKEN: ""
+    ANODOT_URL: ""
     ANODOT_EVENT_CATEGORY: "deployments"
     ANODOT_EVENT_SOURCE: "kubernetes"
-    ANODOT_EVENTS_PROPS_STACK: "monitoring"
     ANODOT_LOG_LEVEL: "5"
     ANODOT_HTTP_DEBUG_ENABLED: "true"
   events:
