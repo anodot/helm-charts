@@ -8,7 +8,7 @@ configuration:
   env:
     EXCLUDE_NAMESPACE: ""
     INCLUDE_LABELS: ""
-    LOG_LEVEL: "5"
+    LOG_LEVEL: "2"
   resources:
     requests:
       memory: '20M'
