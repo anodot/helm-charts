@@ -1,0 +1,39 @@
+# Default values for agent.
+# Agent docs can be found at https://github.com/anodot/daria/wiki
+replicaCount: 1
+persistence:
+  enabled: false
+  storageClass: ""
+  size: "3Gi"
+
+anodotapiurl: "http://anodotd:8080"
+
+busybox:
+  image: 
+    repository: busybox
+    tag: latest
+    pullPolicy: IfNotPresent
+
+streamsets:
+  repository: anodot/streamsets
+  tag: 2.2.3
+  pullPolicy: IfNotPresent
+  env:
+    SDC_JAVA_OPTS: "-Xmx4096m -Xms4096m -server"
+  resources: {}
+  limits:
+   cpu: 1
+   memory: 6Gi
+  requests:
+   cpu: 1
+   memory: 6Gi
+
+nameOverride: "streamsets-agent"
+fullnameOverride: "streamsets-agent"
+
+service:
+  name: streamsets-agent
+  type: NodePort
+  port: 8080
+
+streamsetsurl: "http://streamsets-agent:18630"

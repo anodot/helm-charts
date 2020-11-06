@@ -1,0 +1,27 @@
+# Default values for agent.
+# Agent docs can be found at https://github.com/anodot/daria/wiki
+replicaCount: 1
+
+anodotapiurl: "http://anodotd:8080"
+
+image:
+  repository: anodot/daria
+  tag: 2.2.3
+  pullPolicy: IfNotPresent
+  resources: {}
+  limits:
+   cpu: 500m
+   memory: 1Gi
+  requests:
+   cpu: 250m
+   memory: 1Gi
+
+nameOverride: "anodot-agent"
+fullnameOverride: "anodot-agent"
+
+service:
+  name: anodot-agent
+  type: ClusterIP
+  port: 80
+
+streamsetsurl: "http://streamsets-agent:8080"

@@ -1,0 +1,12 @@
+Streamsets Agent successfully deployed.
+
+Streamsets is the backand for Data collector, nothing to configure directly there.
+
+To check logs use command: 
+POD=$(kubectl get pod -l app.kubernetes.io/name=streamsets-agent -o jsonpath="{.items[].metadata.name}")
+kubectl logs $POD
+
+For configure pipelines use anodot-agent pod: $(kubectl get pod -l app.kubernetes.io/name=anodot-agent -o jsonpath="{.items[].metadata.name}")
+
+Pipeline configuration docs and examples available at:
+https://github.com/anodot/daria/wiki
