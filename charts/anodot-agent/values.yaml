@@ -2,11 +2,9 @@
 # Agent docs can be found at https://github.com/anodot/daria/wiki
 replicaCount: 1
 
-anodotapiurl: "http://anodotd:8080"
-
 image:
   repository: anodot/daria
-  tag: 2.2.3
+  tag: 3.2.0
   pullPolicy: IfNotPresent
   resources: {}
   limits:
@@ -15,6 +13,31 @@ image:
   requests:
    cpu: 250m
    memory: 1Gi
+env:
+  - name: STREAMSETS_URL
+    value: "http://streamsets-agent:8080"
+  - name: ANODOT_API_URL
+    value: "http://anodotd:8080"
+  - name: STREAMSETS_USERNAME
+    value: 'admin'
+  - name: STREAMSETS_PASSWORD
+    value: 'admin'
+  - name: LOG_FILE_PATH
+    value: '/var/log/agent.log'
+  - name: ENV_PROD
+    value: 'false'
+  - name: AGENT_DB_HOST
+    value: "postgres-postgresql"
+  - name: AGENT_DB_USER
+    value: 'agent'
+  - name: AGENT_DB_PASSWORD
+    value: 'agent'
+  - name: PGPASSWORD
+    value: 'agent'
+  - name: AGENT_URL
+    value: 'http://anodot-agent:8080'
+  - name: AGENT_DB
+    value: "postgres-postgresql"
 
 nameOverride: "anodot-agent"
 fullnameOverride: "anodot-agent"
@@ -24,4 +47,3 @@ service:
   type: ClusterIP
   port: 80
 
-streamsetsurl: "http://streamsets-agent:8080"

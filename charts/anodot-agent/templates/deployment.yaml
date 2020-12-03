@@ -35,33 +35,10 @@ spec:
             postStart:
               exec:
                 command: ["/bin/bash","-c", "alembic upgrade head"]
-          env:
-            - name: STREAMSETS_URL
-              value: {{ .Values.streamsetsurl | default "http://streamsets-agent:8080" | quote }}
-            - name: ANODOT_API_URL
-              value: "{{ .Values.anodotapiurl }}"
-            - name: STREAMSETS_USERNAME
-              value: 'admin'
-            - name: STREAMSETS_PASSWORD
-              value: 'admin'
-            - name: LOG_FILE_PATH
-              value: '/var/log/agent.log'
-            - name: ENV_PROD
-              value: 'false'
-            - name: AGENT_DB_HOST
-              value: 'postgres-postgresql'
-            - name: AGENT_DB_USER
-              value: 'agent'
-            - name: AGENT_DB_PASSWORD
-              value: 'agent'
-            - name: PGPASSWORD
-              value: 'agent'
-            - name: AGENT_URL
-              value: 'http://anodot-agent:8080'
-            - name: AGENT_DB
-              value: "postgres-postgresql"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          env:
+            {{- toYaml .Values.env | nindent 12 }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
