@@ -34,7 +34,7 @@ spec:
           lifecycle:
             postStart:
               exec:
-                command: ["/bin/bash","-c","sed -i 's|sqlalchemy.url = postgresql://agent:agent@db/agent|sqlalchemy.url = postgresql://agent:agent@postgres-postgresql/agent|' alembic.ini ; alembic upgrade head "]
+                command: ["/bin/bash","-c", "alembic upgrade head"]
           env:
             - name: STREAMSETS_URL
               value: {{ .Values.streamsetsurl | default "http://streamsets-agent:8080" | quote }}
@@ -58,6 +58,8 @@ spec:
               value: 'agent'
             - name: AGENT_URL
               value: 'http://anodot-agent:8080'
+            - name: AGENT_DB
+              value: "postgres-postgresql"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
