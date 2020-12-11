@@ -16,7 +16,7 @@ busybox:
 
 streamsets:
   repository: anodot/streamsets
-  tag: 3.2.0
+  tag: 3.2.2
   pullPolicy: IfNotPresent
   env:
     SDC_JAVA_OPTS: "-Xmx4096m -Xms4096m -server"

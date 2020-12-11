@@ -8,17 +8,18 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
-  progressDeadlineSeconds: 600
+#  progressDeadlineSeconds: 600
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app.kubernetes.io/name: {{ include "agent.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
-    type: RollingUpdate
+#  strategy:
+#    rollingUpdate:
+#      maxSurge: 1
+#      maxUnavailable: 0
+#    type: RollingUpdate
+  serviceName: {{ include "agent.fullname" . }}
   template:
     metadata:
       labels:
@@ -27,11 +28,11 @@ spec:
     spec:
       initContainers:
         - name: set-permissions
-          image: "{{ .Values.busybox.repository }}:{{ .Values.busybox.tag }}"
+          image: "{{ .Values.busybox.image.repository }}:{{ .Values.busybox.image.tag }}"
           imagePullPolicy: {{ .Values.busybox.pullPolicy }}
           command: ["sh", "-c", "chown -R 20159:20159 /sdc-data"]
           volumeMounts:
-            - name: agent-data
+            - name: streamsets-data
               mountPath: /sdc-data
       containers:
         - name: streamsets
@@ -46,7 +47,7 @@ spec:
           {{- end }}
           volumeMounts:
             - mountPath: /data
-              name: agent-data
+              name: streamsets-data
           ports:
             - name: http
               containerPort: 18630
@@ -68,7 +69,7 @@ spec:
 {{- if .Values.persistence.enabled }}
   volumeClaimTemplates:
     - metadata:
-        name: agent-data
+        name: streamsets-data
       spec:
         accessModes:
           - "ReadWriteOnce"
@@ -85,5 +86,5 @@ spec:
 {{- else }}
       volumes:
         - emptyDir: {}
-          name: agent-data
+          name: streamsets-data
 {{- end }}
