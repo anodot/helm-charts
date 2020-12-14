@@ -4,6 +4,8 @@ replicaCount: 1
 
 persistence:
   enabled: false
+  storageClass: ""
+  size: "1Gi"
 
 image:
   repository: anodot/daria
