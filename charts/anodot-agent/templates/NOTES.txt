@@ -1,0 +1,9 @@
+Agent successfully deployed.
+
+Start configuring pipelines by running commands:
+POD=$(kubectl get pod -l app.kubernetes.io/name=anodot-agent -o jsonpath="{.items[].metadata.name}")
+kubectl exec -ti $POD -- bash
+
+Pipeline configuration docs and examples available at:
+https://github.com/anodot/daria/wiki
+
