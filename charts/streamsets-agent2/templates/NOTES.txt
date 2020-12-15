@@ -1,4 +1,4 @@
-Streamsets Agent is successfully deployed.
+Streamsets Agent successfully deployed.
 
 Streamsets is the backand for Data collector, nothing to configure directly there.
 
