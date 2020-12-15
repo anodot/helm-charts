@@ -9,7 +9,7 @@ persistence:
 
 image:
   repository: anodot/daria
-  tag: 3.2.2
+  tag: 3.2.0
   pullPolicy: IfNotPresent
   resources: {}
   limits:
