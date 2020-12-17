@@ -2,14 +2,9 @@
 # Agent docs can be found at https://github.com/anodot/daria/wiki
 replicaCount: 1
 
-persistence:
-  enabled: false
-  storageClass: ""
-  size: "1Gi"
-
 image:
   repository: anodot/daria
-  tag: 3.2.0
+  tag: 3.3.0
   pullPolicy: IfNotPresent
   resources: {}
   limits:
