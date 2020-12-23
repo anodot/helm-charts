@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "agent.fullname" . }}
+  name: {{ include "streamsets.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "agent.name" . }}
-    helm.sh/chart: {{ include "agent.chart" . }}
+    app.kubernetes.io/name: {{ include "streamsets.name" . }}
+    helm.sh/chart: {{ include "streamsets.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
@@ -15,4 +15,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app.kubernetes.io/name: {{ include "agent.name" . }}
+    app.kubernetes.io/name: {{ include "streamsets.name" . }}

@@ -31,10 +31,6 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-          lifecycle:
-            postStart:
-              exec:
-                command: ["/bin/bash","-c", "alembic upgrade head"]
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
