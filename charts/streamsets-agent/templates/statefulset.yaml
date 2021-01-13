@@ -13,6 +13,7 @@ spec:
     matchLabels:
       app.kubernetes.io/name: {{ include "agent.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
+  serviceName: {{ include "agent.fullname" . }}
   template:
     metadata:
       labels:
