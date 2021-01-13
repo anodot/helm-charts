@@ -1,5 +1,6 @@
 # Anodot Kube Events
 
+Application is used to send Events from Kubernetes cluster to Anodot system.
 
 
 # Installation
