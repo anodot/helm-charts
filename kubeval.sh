@@ -8,6 +8,8 @@ declare -a supported_k8s_version=("1.13.0" "1.14.0" "1.15.0" "1.16.0")
 
 for i in "${supported_k8s_version[@]}"
 do
-   echo "Validating against '${i}' kubernetes version"
-   "${HELM}" kubeval ${current_dir}/charts/* -v "$i"
+    for d in ${current_dir}/charts/* ; do
+        echo "Validating '${d}' against '${i}' kubernetes version"
+        "${HELM}" kubeval "${d}" -v "$i"
+    done
 done

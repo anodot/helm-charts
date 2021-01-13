@@ -1,5 +1,15 @@
 apiVersion: v1
 entries:
+  anodot-agent:
+  - apiVersion: v1
+    appVersion: 3.3.1
+    created: 2021-01-13T13:20:29.197000479+02:00
+    description: Anodot Agent Helm chart for Kubernetes
+    digest: a6d6f4d35e066d5e7caa561be2290ae60a31beeeaf674d023d92bfa323f7b8d1
+    name: anodot-agent
+    urls:
+    - https://anodot.github.io/helm-charts/anodot-agent-1.0.0.tgz
+    version: 1.0.0
   anodot-kube-events:
   - apiVersion: v1
     appVersion: 0.0.4
@@ -52,6 +62,16 @@ entries:
     urls:
     - https://anodot.github.io/helm-charts/anodot-prometheus-remote-write-1.1.1.tgz
     version: 1.1.1
+  streamsets:
+  - apiVersion: v1
+    appVersion: 3.3.1
+    created: 2021-01-13T13:20:29.199994477+02:00
+    description: Streamsets Agent Helm chart for Kubernetes
+    digest: 3cc88c494978095c363f9e83e5ce212240841e11993d1919be18f58c902a5337
+    name: streamsets
+    urls:
+    - https://anodot.github.io/helm-charts/streamsets-1.0.0.tgz
+    version: 1.0.0
   streamsets-agent:
   - apiVersion: v1
     appVersion: 1.9.8
