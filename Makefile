@@ -1,4 +1,4 @@
-HELM:=helm11
+HELM:=helm2
 
 build-charts:
 	$(HELM) init --client-only

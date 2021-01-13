@@ -7,6 +7,7 @@ spec:
     app: {{ template "template_name" . }}
     release: {{ .Release.Name }}
   ports:
-    - protocol: TCP
+    - name: http
+      protocol: TCP
       port: 8080
       targetPort: 8080
