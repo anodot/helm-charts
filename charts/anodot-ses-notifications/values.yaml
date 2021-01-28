@@ -1,0 +1,60 @@
+# Default values for anodot-ses-notifications.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: anodot/anodot-ses-notifications
+  tag: 0.0.1
+  pullPolicy: Always
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 8080
+
+resources: 
+  requests:
+    memory: '20M'
+    cpu: '50m'
+  limits:
+    memory: '200M'
+    cpu: '200m'
+
+configuration:
+  file:
+    vm_host: http://172.31.100.196:8428/api/v1/import/prometheus
+    aws_region: us-east-1
+    sqs_poll_timeout: 120
+    queue_name: email-bounce
+  env:
+    ANODOT_EVENT_CONFIG_LOCATION: /mnt/config.yaml
+
+prometheus:
+  serviceMonitor:
+    enabled: true
+    jobLabel: "anodot-ses-notifications"
+    #labels:
+    #  key: "value"
+
+    interval: 30s
+    scrapeTimeout: 5s
+
+    metricRelabelings:
+      - sourceLabels: [__name__]
+        regex: '(.*)'
+        targetLabel: anodot_include
+        replacement: 'true'
+    #  - sourceLabels: [__name__]
+    #    regex: '(.*)'
+    #    action: 'keep'
+    relabelings: []
+    # - sourceLabels: [__meta_kubernetes_pod_node_name]
+    #   separator: ;
+    #   regex: ^(.*)$
+    #   target_label: nodename
+    #   replacement: $1
+    #   action: replace

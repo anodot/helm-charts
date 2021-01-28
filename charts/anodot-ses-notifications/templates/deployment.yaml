@@ -1,0 +1,53 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ include "anodot-ses-notifications.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "anodot-ses-notifications.name" . }}
+    helm.sh/chart: {{ include "anodot-ses-notifications.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "anodot-ses-notifications.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "anodot-ses-notifications.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - name: config-volume
+              mountPath: /mnt/
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- with .Values.nodeSelector }}
+{{- end }}
+          env:
+          {{- range $name, $value := .Values.configuration.env }}
+            - name: "{{ $name }}"
+              value: "{{ $value }}"
+          {{- end }}
+      volumes:
+        - name: config-volume
+          configMap:
+            name: {{ include "anodot-ses-notifications.fullname" . }}
