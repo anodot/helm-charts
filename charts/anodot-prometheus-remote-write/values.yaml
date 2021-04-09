@@ -1,6 +1,6 @@
 image:
   repository: anodot/prometheus-remote-write
-  tag: "2.0.0"
+  tag: "2.3.2"
   pullPolicy: IfNotPresent
 
 configuration:
@@ -16,11 +16,10 @@ configuration:
     ANODOT_LOG_LEVEL: "3"
     ANODOT_TAGS: "source=prometheus-remote-write"
     ANODOT_HTTP_DEBUG_ENABLED: "false"
+    ANODOT_API_TOKEN: "CHANGE_ME"
     #K8S_RELABEL_SERVICE_URL: "http://anodot-pod-relabel:8080"
   args:
     - "--url=https://api.anodot.com"
-    - "--token=XXXXXXXXX"
-
 
 livenessProbe:
   initialDelaySeconds: 30
