@@ -3,7 +3,7 @@ entries:
   anodot-agent:
   - apiVersion: v1
     appVersion: 3.3.1
-    created: 2021-04-09T10:16:02.993822117+03:00
+    created: 2021-04-15T11:28:29.999021017+03:00
     description: Anodot Agent Helm chart for Kubernetes
     digest: 01c145b4e6523e5c8db76bbe31b917227e2a5857671e69e94ee3bc49a9279b6f
     name: anodot-agent
@@ -13,7 +13,7 @@ entries:
   anodot-kube-events:
   - apiVersion: v1
     appVersion: 0.0.4
-    created: 2021-04-09T10:16:02.995536989+03:00
+    created: 2021-04-15T11:28:30.000393877+03:00
     description: Anodot kube events app. used to send Kubernetes events to Anodot
       system
     digest: ee84fa6e4de2fc66623b0b9fbcacdd4aefe7cf96f46d45632e5f10e2f1799345
@@ -23,7 +23,7 @@ entries:
     version: 0.0.3
   - apiVersion: v1
     appVersion: 0.0.1
-    created: 2021-04-09T10:16:02.994694538+03:00
+    created: 2021-04-15T11:28:29.999738224+03:00
     description: Anodot kube events app. used to send Kubernetes events to Anodot
       system
     digest: bf231f9ef6c0e1812e44f72a40c1638f02a4dab1708b6f7df11a3dcfa8d7cd24
@@ -34,7 +34,7 @@ entries:
   anodot-pod-relabel:
   - apiVersion: v1
     appVersion: 0.0.2
-    created: 2021-04-09T10:16:02.996165018+03:00
+    created: 2021-04-15T11:28:30.00119172+03:00
     description: Anodot pod relabel app. used to assing pods with sequence labels
     digest: 91d3bce1eb3423889aa12a98cbf016912157ff060290ab2978a8b123dbb0c50a
     name: anodot-pod-relabel
@@ -44,17 +44,17 @@ entries:
   anodot-prometheus-remote-write:
   - apiVersion: v1
     appVersion: 2.0.0
-    created: 2021-04-09T10:16:02.997244105+03:00
+    created: 2021-04-15T11:28:30.002224401+03:00
     description: Anodot Prometheus remote write. Used to push Prometheus to Anodot
       system.
-    digest: b044ce309caa3e151c40d6aedf59112370d24a4e9d016a642b925a1142799720
+    digest: 99b29382e3e8b3ae4f62f7c83ccf73480215a6e988f38a5a78439a3e7a2fa79a
     name: anodot-prometheus-remote-write
     urls:
     - https://anodot.github.io/helm-charts/anodot-prometheus-remote-write-1.1.2.tgz
     version: 1.1.2
   - apiVersion: v1
     appVersion: 2.0.0
-    created: 2021-04-09T10:16:02.996997448+03:00
+    created: 2021-04-15T11:28:30.001946361+03:00
     description: Anodot Prometheus remote write. Used to push Prometheus to Anodot
       system.
     digest: 8d75be1e37bd5d385aab854392627ca883b3bf3f41557c7e1192935b8f6d295e
@@ -65,7 +65,7 @@ entries:
   anodot-ses-notifications:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2021-04-09T10:16:02.997763086+03:00
+    created: 2021-04-15T11:28:30.002871903+03:00
     description: A Helm chart for Kubernetes
     digest: a1b5fc8cc227b7cfb827e504d3c2253de781888053dc1f24f8ceb956ce5f6aa7
     name: anodot-ses-notifications
@@ -75,7 +75,7 @@ entries:
   streamsets:
   - apiVersion: v1
     appVersion: 3.3.1
-    created: 2021-04-09T10:16:02.998277263+03:00
+    created: 2021-04-15T11:28:30.00364511+03:00
     description: Streamsets Agent Helm chart for Kubernetes
     digest: fd5661c3d498cad2a4cdcadad4a8503181825a832706e8062d2f55874623ba76
     name: streamsets
@@ -85,11 +85,11 @@ entries:
   streamsets-agent:
   - apiVersion: v1
     appVersion: 1.9.8
-    created: 2021-04-09T10:16:02.998684821+03:00
+    created: 2021-04-15T11:28:30.004346864+03:00
     description: Agent Helm chart for Kubernetes
     digest: 379ef38aedce06b00ddb77574ab82b3dbccf9ca186ec639ea827ffe87b964a85
     name: streamsets-agent
     urls:
     - https://anodot.github.io/helm-charts/streamsets-agent-1.0.0.tgz
     version: 1.0.0
-generated: 2021-04-09T10:16:02.992861603+03:00
+generated: 2021-04-15T11:28:29.997556533+03:00
