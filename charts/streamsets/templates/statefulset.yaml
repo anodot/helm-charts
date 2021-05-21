@@ -20,14 +20,6 @@ spec:
         app.kubernetes.io/name: {{ include "streamsets.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
-      initContainers:
-        - name: set-permissions
-          image: "{{ .Values.busybox.image.repository }}:{{ .Values.busybox.image.tag }}"
-          imagePullPolicy: {{ .Values.busybox.pullPolicy }}
-          command: ["sh", "-c", "chown -R 20159:20159 /sdc-data"]
-          volumeMounts:
-            - name: streamsets-data
-              mountPath: /sdc-data
       containers:
         - name: streamsets
           image: "{{ .Values.streamsets.repository }}:{{ .Values.streamsets.tag }}"
@@ -60,6 +52,8 @@ spec:
                 port: 18630
           resources:
 {{ toYaml .Values.streamsets.resources | indent 12 }}
+          securityContext:
+{{ toYaml .Values.securityContext | indent 12 }}
 {{- if .Values.persistence.enabled }}
   volumeClaimTemplates:
     - metadata:
