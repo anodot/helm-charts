@@ -8,11 +8,11 @@ image:
   pullPolicy: IfNotPresent
   resources: {}
   limits:
-   cpu: 500m
-   memory: 1Gi
+   cpu: 1
+   memory: 4Gi
   requests:
-   cpu: 250m
-   memory: 1Gi
+   cpu: 1
+   memory: 4Gi
 env:
   - name: STREAMSETS_URL
     value: "http://streamsets-agent:8080"
