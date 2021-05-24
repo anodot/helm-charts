@@ -22,10 +22,10 @@ streamsets:
     SDC_JAVA_OPTS: "-Xmx4096m -Xms4096m -server"
   resources:
     limits:
-     cpu: 1
+     cpu: 2
      memory: 6Gi
     requests:
-     cpu: 1
+     cpu: 2
      memory: 6Gi
 
 nameOverride: "streamsets-agent"
@@ -39,3 +39,5 @@ service:
 streamsetsurl: "http://streamsets-agent:18630"
 
 securityContext: {}
+
+runInitContainer: false
