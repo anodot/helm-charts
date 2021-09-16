@@ -14,16 +14,6 @@ image:
    cpu: 1
    memory: 4Gi
 env:
-  - name: STREAMSETS_URL
-    value: "http://streamsets-agent:8080"
-  - name: ANODOT_API_URL
-    value: "http://anodotd:8080"
-  - name: STREAMSETS_USERNAME
-    value: 'admin'
-  - name: STREAMSETS_PASSWORD
-    value: 'admin'
-  - name: LOG_FILE_PATH
-    value: '/var/log/agent.log'
   - name: ENV_PROD
     value: 'false'
   - name: AGENT_DB_HOST
@@ -32,12 +22,10 @@ env:
     value: 'agent'
   - name: AGENT_DB_PASSWORD
     value: 'agent'
-  - name: PGPASSWORD
-    value: 'agent'
-  - name: AGENT_URL
-    value: 'http://anodot-agent:8080'
   - name: AGENT_DB
     value: "postgres-postgresql"
+  - name: LISTEN_PORT
+    value: 8080
 
 nameOverride: "anodot-agent"
 fullnameOverride: "anodot-agent"
@@ -45,5 +33,5 @@ fullnameOverride: "anodot-agent"
 service:
   name: anodot-agent
   type: ClusterIP
-  port: 80
+  port: 8080
 
