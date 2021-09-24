@@ -35,3 +35,6 @@ service:
   type: ClusterIP
   port: 8080
 
+container:
+  port: 8080
+
