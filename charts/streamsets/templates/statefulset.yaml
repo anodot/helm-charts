@@ -30,6 +30,8 @@ spec:
             - name: streamsets-data
               mountPath: /sdc-data
       {{- end }}
+      securityContext:
+{{ toYaml .Values.podSecurityContext | indent 12 }}
       containers:
         - name: streamsets
           image: "{{ .Values.streamsets.repository }}:{{ .Values.streamsets.tag }}"

@@ -39,5 +39,6 @@ service:
 streamsetsurl: "http://streamsets-agent:18630"
 
 securityContext: {}
+podSecurityContext: {}
 
 runInitContainer: false
