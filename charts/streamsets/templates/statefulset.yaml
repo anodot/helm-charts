@@ -20,6 +20,10 @@ spec:
         app.kubernetes.io/name: {{ include "streamsets.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+      {{- with .Values.topologySpreadConstraints }}
+      topologySpreadConstraints:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       {{- if .Values.runInitContainer }}
       initContainers:
         - name: set-permissions

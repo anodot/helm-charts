@@ -25,7 +25,7 @@ env:
   - name: AGENT_DB
     value: "postgres-postgresql"
   - name: LISTEN_PORT
-    value: 8080
+    value: '8080'
 
 nameOverride: "anodot-agent"
 fullnameOverride: "anodot-agent"
