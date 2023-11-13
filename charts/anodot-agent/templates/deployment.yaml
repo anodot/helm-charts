@@ -35,6 +35,35 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             {{- toYaml .Values.env | nindent 12 }}
+          volumeMounts:
+            {{- if .Values.configmap.enabled }}
+            {{- if .Values.configmap.files }}
+            {{- range .Values.configmap.files }}
+            - mountPath: {{ .mountPath }}
+              name: files
+              {{- range $name, $value := .data }}
+              subPath: ..data/{{ $name }}
+              {{- end }}
+            {{- end }}
+            {{- end }}
+            {{- if .Values.configmap.binaryFiles }}
+            {{- range .Values.configmap.binaryFiles }}
+            - mountPath: {{ .mountPath }}
+              name: files
+              {{- range $name, $value := .data }}
+              subPath: ..data/{{ $name }}
+              {{- end }}
+            {{- end }}
+            {{- end }}
+            {{- end }}
+      volumes:
+        {{- if .Values.configmap.enabled }}
+        {{- if or .Values.configmap.files .Values.configmap.binaryFiles }}
+        - name: files
+          configMap:
+            name: {{ include "agent.fullname" . }}
+        {{- end }}
+        {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

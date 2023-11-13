@@ -38,3 +38,5 @@ service:
 container:
   port: 8080
 
+configmap:
+  enabled: false
