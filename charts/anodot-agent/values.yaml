@@ -4,7 +4,7 @@ replicaCount: 1
 
 image:
   repository: anodot/daria
-  tag: 3.3.1
+  tag: 3.52.0
   pullPolicy: IfNotPresent
   resources: {}
   limits:
@@ -25,7 +25,7 @@ env:
   - name: AGENT_DB
     value: "postgres-postgresql"
   - name: LISTEN_PORT
-    value: 8080
+    value: '8080'
 
 nameOverride: "anodot-agent"
 fullnameOverride: "anodot-agent"
@@ -38,3 +38,5 @@ service:
 container:
   port: 8080
 
+configmap:
+  enabled: false

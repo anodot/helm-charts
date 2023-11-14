@@ -1,0 +1,28 @@
+{{- if .Values.configmap.enabled }}
+{{- if or .Values.configmap.files .Values.configmap.binaryFiles }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "agent.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "agent.name" . }}
+    helm.sh/chart: {{ include "agent.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+
+data:
+{{- range .Values.configmap.files }}
+{{- range $key, $value := .data }}
+  {{ $key }}: |-
+{{ $value | indent 4 }}
+{{- end }}
+{{- end }}
+binaryData:
+{{- range .Values.configmap.binaryFiles }}
+{{- range $key, $value := .data }}
+  {{ $key }}: |-
+{{ $value | indent 4 }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
