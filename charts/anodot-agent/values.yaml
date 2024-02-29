@@ -6,7 +6,8 @@ image:
   repository: anodot/daria
   tag: 3.52.0
   pullPolicy: IfNotPresent
-  resources: {}
+
+resources:
   limits:
    cpu: 1
    memory: 4Gi
