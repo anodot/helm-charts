@@ -31,6 +31,12 @@ streamsets:
 nameOverride: "streamsets-agent"
 fullnameOverride: "streamsets-agent"
 
+topologySpreadConstraints: []
+
+podAnnotations: {}
+
+nodeSelector: {}
+
 service:
   name: streamsets-agent
   type: NodePort
