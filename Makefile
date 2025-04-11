@@ -1,4 +1,4 @@
-HELM:=helm2
+HELM:=helm
 
 build-charts:
 	$(HELM) init --client-only
@@ -8,3 +8,8 @@ build-charts:
 	$(HELM) lint charts/*
 	$(HELM) package charts/*
 	$(HELM) repo index --url https://anodot.github.io/helm-charts/ --merge index.yaml .
+
+indexing_charts:
+	@echo "Indexing charts..."
+	@$(HELM) repo index --url https://anodot.github.io/helm-charts/ --merge index.yaml .
+	@echo "Done indexing charts."
