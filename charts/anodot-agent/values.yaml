@@ -31,6 +31,12 @@ env:
 nameOverride: "anodot-agent"
 fullnameOverride: "anodot-agent"
 
+podAnnotations: {}
+
+nodeSelector: {}
+
+topologySpreadConstraints: []
+
 service:
   name: anodot-agent
   type: ClusterIP
